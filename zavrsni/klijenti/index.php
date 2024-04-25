@@ -11,7 +11,7 @@
         <div class="add-radnik-overlay">
             <form method="post" action="klijenti.php">
                 <div class="input-group">
-                    <span>Ime:</span>
+                    <span>Ime: </span>
                     <input type="text" name="ime">
                 </div>
                 <div class="input-group">
