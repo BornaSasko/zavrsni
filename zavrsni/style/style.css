@@ -106,11 +106,42 @@ main#radnici {
 
 .main-info-card {
     border:1px solid rgb(10,20,50);
-    width: 30vmin;
-    height:40vmin;
+    width: 40vmin;
+    height:50vmin;
     background: rgb(20,30,60);
     border-radius: 10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7em;
 }
+
+.table-wrapper {
+    width: 38vmin;
+    height:48vmin;
+    border: 2px solid var(--fg-color);
+    border-radius: 5px;
+    
+}
+
+.main-info-card table {
+    width: 100%;
+    background: none;
+    border-collapse: collapse;
+}
+
+#main-table td, #main-table th{
+    border:1px solid var(--fg-color);
+    height: 2em;
+    text-align: center;
+}
+
+#profit-table td, #profit-table th{
+    border:1px solid var(--fg-color);
+    height: 2em;
+    text-align: center;
+}
+    
 form {
     width: 100%;
     height: 100%;

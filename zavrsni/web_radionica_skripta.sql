@@ -1,8 +1,9 @@
-CREATE DATABASE web_radionica;
+CREATE DATABASE web_radionica;  --kreira bazu pod imenom web_radionica
 
 USE web_radionica;
 
-CREATE TABLE Radnici (
+--struktura tablice Radnici
+CREATE TABLE Radnici ( 
     OIB CHAR(11) not null PRIMARY KEY,
     Ime VARCHAR(255),
 	Prezime VARCHAR(255),
@@ -10,6 +11,7 @@ CREATE TABLE Radnici (
     KontaktInfo VARCHAR(255)
 );
 
+--struktura tablice Klijenti
 CREATE TABLE Klijenti (
     IDKlijenta INT not null PRIMARY KEY AUTO_INCREMENT,
     Ime VARCHAR(255),
@@ -17,6 +19,7 @@ CREATE TABLE Klijenti (
     KontaktInfo VARCHAR(255)
 );
 
+--struktura tablice RadniNalozi
 CREATE TABLE RadniNalozi (
     IDRadnogNaloga INT not null PRIMARY KEY AUTO_INCREMENT,
     IDRadnika CHAR(11),

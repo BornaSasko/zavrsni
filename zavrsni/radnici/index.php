@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include "../include/head.php"?>
+    <?php include "../include/head.php"?> <!--ubacivanje zaglavlja stranice-->
 </head>
 <body>
     <nav>
-        <?php include "../include/navigation.php" ?>
+        <?php include "../include/navigation.php" ?> <!--ubacivanje navigacije stranice-->
     </nav>
     <main id="radnici">
         <div class="add-radnik-overlay">
-            <form method="post" action="radnici.php">
+            <form method="post" action="radnici.php"><!--forma za unos podataka-->
                 <div class="input-group">
                     <span>Ime:</span>
                     <input type="text" name="ime">
@@ -35,6 +35,7 @@
         </div>
         <div class="radnici-table-wrapper">
         <?php
+            //veza sa serverom i bazom
             $servername = "localhost"; 
             $username = "admin";
             $password = "123";
@@ -46,8 +47,12 @@
                 die("Connection failed: " . $conn->connect_error);
             }
 
+            //sql upit koji vraća sve iz tablice klijenti
+
             $sql = "SELECT * FROM Radnici";
             $result = $conn->query($sql);
+
+            //ispis podataka u obliku tablice
 
             if ($result->num_rows > 0) {
                 echo "<table>";
@@ -60,15 +65,14 @@
                     echo "<td>" . $row["CijenaSata"] . "</td>";
                     echo "<td>" . $row["KontaktInfo"] . "</td>";
                     echo "<td><a href='brisi_radnika.php?OIB={$row["OIB"]}'>Briši</a></td>";
-                    echo "<td><a href=''>Uredi</a></td>";
                     echo "</tr>";
                 }
                 echo "</table>";
             } else {
-                echo "Nema rezultata.";
+                echo "Nema rezultata."; //poruka ako je tablica prazna
             }
 
-            $conn->close();
+            $conn->close(); //zatvaranje veze s serverom i bazom
         ?>
         </div>
     </main>
