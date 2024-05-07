@@ -1,5 +1,6 @@
 :root {
     --bg-color:rgb(0,10,20);
+    --table-bg-color:rgb(10,20,40);
     --fg-color:rgb(220,240,255);
 }   
 
@@ -62,6 +63,36 @@ nav{
     transform: translateY(250%);
     opacity: 1;
 }
+
+.nav-item-dropdown {
+    font-size: 0.9em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:0.5em;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    inset:50%;
+    transform:translate(-50%, -20%);
+    opacity: 0;
+    transition: 1s;
+}
+
+.nav-item:hover > .nav-item-dropdown {
+    opacity: 1;
+    transform: translate(-50%, 35%);
+}
+
+.dropdown-link {
+    transition:0.3s;
+}
+.dropdown-link:hover {
+    scale:1.1;
+}
+
+
 
 a {
     color:white;
@@ -156,7 +187,10 @@ form {
     justify-content: flex-end;
 }
 
-.add-radnik-overlay {
+.add-entity-overlay {
+    position:absolute;
+    visibility: hidden;
+ 
     display:flex;
     width: 500px;
     height: 500px;
@@ -170,6 +204,43 @@ input#submit-btn {
     margin-right: auto;
 }
 
-table {
-    background: black;
+.pregled-table-wrapper {
+    width: 90%;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    gap:2em
+}
+
+.pregled-table-wrapper table {
+    background: var(--table-bg-color);
+    border-collapse: collapse;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.pregled-table-wrapper td, .pregled-table-wrapper th {
+    border:1px solid var(--fg-color);
+    text-align: center;
+    width: 200px;
+    height: 40px;
+}
+
+input.gumb {
+    width: 200px;
+    height: 50px;
+    background: var(--table-bg-color);
+    border: 1px solid var(--fg-color);
+    color:var(--fg-color);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    transition: 0.3s;
+    letter-spacing: 5px;
+    border-radius: 5px;
+}
+
+input.gumb:hover {
+    cursor: pointer;
+    background: var(--bg-color);
 }

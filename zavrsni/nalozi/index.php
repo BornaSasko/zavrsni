@@ -8,7 +8,7 @@
         <?php include "../include/navigation.php" ?>
     </nav>
     <main id="radnici">
-        <div class="add-radnik-overlay">
+        <div class="add-entity-overlay">
             <form method="post" action="nalozi.php">
                 <div class="input-group">
                     <span>Zaposlenik:</span>
@@ -109,7 +109,9 @@
                 <input type="submit" name="button" id="submit-btn" value="Dodaj"> 
             </form>
         </div>
-        <div class="radnici-table-wrapper">
+        <div class="pregled-table-wrapper">
+        <input type="button" class="gumb" value="DODAJ">
+
         <?php
             //veza s serverom i bazom
             $servername = "localhost"; 

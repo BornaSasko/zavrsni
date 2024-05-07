@@ -8,7 +8,7 @@
         <?php include "../include/navigation.php" ?> <!--ubacivanje navigacije stranice-->
     </nav>
     <main id="radnici">
-        <div class="add-radnik-overlay">
+        <div class="add-entity-overlay">
             <form method="post" action="radnici.php"><!--forma za unos podataka-->
                 <div class="input-group">
                     <span>Ime:</span>
@@ -33,7 +33,8 @@
                 <input type="submit" name="button" id="submit-btn" value="Dodaj"> 
             </form>
         </div>
-        <div class="radnici-table-wrapper">
+        <div class="pregled-table-wrapper">
+        <input type="button" class="gumb" value="DODAJ"> 
         <?php
             //veza sa serverom i bazom
             $servername = "localhost"; 
@@ -56,7 +57,7 @@
 
             if ($result->num_rows > 0) {
                 echo "<table>";
-                echo "<tr><th>OIB</th><th>Ime</th><th>Prezime</th><th>Cijena sata</th><th>Kontakt</th><th></th><th></th></tr>";
+                echo "<tr><th>OIB</th><th>Ime</th><th>Prezime</th><th>Cijena sata</th><th>Kontakt</th><th></th></tr>";
                 while($row = $result->fetch_assoc()) {
                     echo "<tr>";
                     echo "<td>" . $row["OIB"] . "</td>";
