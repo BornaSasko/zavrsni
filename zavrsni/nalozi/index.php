@@ -8,11 +8,11 @@
         <?php include "../include/navigation.php" ?>
     </nav>
     <main id="radnici">
-        <div class="add-entity-overlay">
+        <div class="overlay-hidden" id="add-order-overlay">
             <form method="post" action="nalozi.php">
                 <div class="input-group">
                     <span>Zaposlenik:</span>
-                    <select name="IDRadnika">
+                    <select class="input-polje" name="IDRadnika">
                         <?php
                             //veza sa serverom i bazom
                             $servername = "localhost"; 
@@ -46,7 +46,7 @@
                 </div>
                 <div class="input-group">
                     <span>Klijent:</span>
-                    <select name="IDKlijenta">
+                    <select class="input-polje" name="IDKlijenta">
                         <?php
                             //veza sa serverom i bazom
                             $servername = "localhost"; 
@@ -80,37 +80,38 @@
                 </div>
                 <div class="input-group">
                     <span>Datum otvaranja</span>
-                    <input type="date" name="DatumOtvaranja">
+                    <input class="input-polje" type="date" name="DatumOtvaranja">
                 </div>
                 <div class="input-group">
                     <span>Opis popravka</span>
-                    <input type="text" name="OpisPopravka">
+                    <input class="input-polje" type="text" name="OpisPopravka">
                 </div>
                 <div class="input-group">
                     <span>Kvar:</span>
-                    <input type="text" name="UtvrdeniKvar">
+                    <input class="input-polje" type="text" name="UtvrdeniKvar">
                 </div>
                 <div class="input-group">
                     <span>Datum zatvaranja:</span>
-                    <input type="date" name="DatumZatvaranja">
+                    <input class="input-polje" type="date" name="DatumZatvaranja">
                 </div>
                 <div class="input-group">
                     <span>Vrijeme popravka:</span>
-                    <input type="text" name="UkupnoVrijemePopravka">
+                    <input class="input-polje" type="text" name="UkupnoVrijemePopravka">
                 </div>
                 <div class="input-group">
                     <span>Cijena dijelova:</span>
-                    <input type="text" name="CijenaDijelova">
+                    <input class="input-polje" type="text" name="CijenaDijelova">
                 </div>
                 <div class="input-group">
                     <span>Cijena rada:</span>
-                    <input type="text" name="CijenaRada">
+                    <input class="input-polje" type="text" name="CijenaRada">
                 </div>
-                <input type="submit" name="button" id="submit-btn" value="Dodaj"> 
+                <input type="submit" class="overlay-input-gumb" name="button" id="submit-btn" value="Dodaj"> 
+                <input type="button" value="&times;" class="btn-toggle-overlay" onclick="toggleOverlay('add-order-overlay');">
             </form>
         </div>
         <div class="pregled-table-wrapper">
-        <input type="button" class="gumb" value="DODAJ">
+        <input type="button" class="gumb" value="DODAJ" onclick="toggleOverlay('add-order-overlay');">
 
         <?php
             //veza s serverom i bazom

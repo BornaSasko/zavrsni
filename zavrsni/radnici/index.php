@@ -8,33 +8,34 @@
         <?php include "../include/navigation.php" ?> <!--ubacivanje navigacije stranice-->
     </nav>
     <main id="radnici">
-        <div class="add-entity-overlay">
-            <form method="post" action="radnici.php"><!--forma za unos podataka-->
+        <div class="overlay-hidden" id="add-entity-overlay">
+            <form method="post" id="form-add-entity" action="radnici.php"><!--forma za unos podataka-->
                 <div class="input-group">
-                    <span>Ime:</span>
-                    <input type="text" name="ime">
+                    <span>Ime: </span>
+                    <input class="input-polje" type="text" name="ime">
                 </div>
                 <div class="input-group">
-                    <span>Prezime:</span>
-                    <input type="text" name="prezime">
+                    <span>Prezime: </span>
+                    <input class="input-polje" type="text" name="prezime">
                 </div>
                 <div class="input-group">
-                    <span>OIB:</span>
-                    <input type="text" name="oib">
+                    <span>OIB: </span>
+                    <input class="input-polje" type="text" name="oib">
                 </div>
                 <div class="input-group">
-                    <span>Cijena sata:</span>
-                    <input type="text" name="cijenasata">
+                    <span>Cijena sata: </span>
+                    <input class="input-polje" type="text" name="cijenasata">
                 </div>
                 <div class="input-group">
-                    <span>Kontakt:</span>
-                    <input type="text" name="kontakt">
+                    <span>Kontakt: </span>
+                    <input class="input-polje" type="text" name="kontakt">
                 </div>
-                <input type="submit" name="button" id="submit-btn" value="Dodaj"> 
+                <input type="submit" name="button" class="overlay-input-gumb" id="submit-btn" value="Dodaj"> 
+                <input type="button" value="&times;" class="btn-toggle-overlay" onclick="toggleOverlay('add-entity-overlay');">
             </form>
         </div>
         <div class="pregled-table-wrapper">
-        <input type="button" class="gumb" value="DODAJ"> 
+        <input type="button" class="gumb" value="DODAJ" onclick="toggleOverlay('add-entity-overlay');"> 
         <?php
             //veza sa serverom i bazom
             $servername = "localhost"; 

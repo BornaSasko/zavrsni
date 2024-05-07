@@ -8,25 +8,26 @@
         <?php include "../include/navigation.php" ?><!--ubacivanje navigacije stranice-->
     </nav>
     <main id="radnici">
-        <div class="add-entity-overlay">
+        <div id="add-worker-overlay" class="overlay-hidden">
             <form method="post" action="klijenti.php"><!--forma za unos podataka-->
                 <div class="input-group">
                     <span>Ime: </span>
-                    <input type="text" name="ime">
+                    <input class="input-polje" type="text" name="ime">
                 </div>
                 <div class="input-group">
                     <span>Prezime:</span>
-                    <input type="text" name="prezime">
+                    <input class="input-polje" type="text" name="prezime">
                 </div>
                 <div class="input-group">
                     <span>Kontakt:</span>
-                    <input type="text" name="kontakt">
+                    <input class="input-polje" type="text" name="kontakt">
                 </div>
-                <input type="submit" name="button" id="submit-btn" value="Dodaj"> 
+                <input type="submit" name="button" class="overlay-input-gumb" id="submit-btn" value="Dodaj"> 
+                <input type="button" value="&times;" class="btn-toggle-overlay" onclick="toggleOverlay('add-worker-overlay');">
             </form>
         </div>
         <div class="pregled-table-wrapper">
-        <input type="button" class="gumb" value="DODAJ">
+        <input type="button" class="gumb" value="DODAJ" onclick="toggleOverlay('add-worker-overlay');">
         <?php
             //veza sa serverom i bazom
             $servername = "localhost"; 
